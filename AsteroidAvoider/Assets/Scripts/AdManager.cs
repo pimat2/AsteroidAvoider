@@ -5,7 +5,7 @@ using UnityEngine.Advertisements;
 
 public class AdManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener, IUnityAdsInitializationListener
 {
-    [SerializeField] bool testMode = false;
+    [SerializeField] bool testMode = true;
     public static AdManager instance;
     GameOverHandler gameOverHandler;
 
@@ -33,11 +33,11 @@ public class AdManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowList
     public void ShowAd(GameOverHandler gameOverHandler){
         this.gameOverHandler = gameOverHandler;
 
-        Advertisement.Show("rewardedVideo", this);
+        Advertisement.Load(gameId, this);
     }
     public void OnUnityAdsAdLoaded(string placementId)
     {
-        Debug.Log("Ad Loaded");
+        Advertisement.Show("rewardedVideo", this);
     }
 
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
@@ -52,6 +52,7 @@ public class AdManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowList
 
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
+        Advertisement.Load("rewardedVideo", this);
         switch(showCompletionState){
             case UnityAdsShowCompletionState.COMPLETED:
                 //gameOverHandler.ContinueGame();
@@ -76,6 +77,7 @@ public class AdManager : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowList
     }
      public void OnInitializationComplete()
     {
+        Advertisement.Load("rewardedVide",this);
         Debug.Log("Initialization Complete");
     }
 

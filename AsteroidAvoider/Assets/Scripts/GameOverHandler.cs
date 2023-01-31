@@ -14,6 +14,7 @@ public class GameOverHandler : MonoBehaviour
     [SerializeField] GameObject gameOverDisplay;
     [SerializeField] AsteroidSpawner asteroidSpawner;
     public void EndGame(){
+        
         asteroidSpawner.enabled = false;
         
         int finalScore = scoreHandler.StopCounting();
