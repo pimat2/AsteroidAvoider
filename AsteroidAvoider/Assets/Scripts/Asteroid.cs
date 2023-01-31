@@ -12,4 +12,7 @@ public class Asteroid : MonoBehaviour
             return;
         }
    }
+   void OnBecameInvisible() {
+        Destroy(gameObject); 
+   }
 }
