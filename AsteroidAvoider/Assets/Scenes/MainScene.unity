@@ -727,6 +727,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217e29d27cca2d3488d0f347450f5eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 4966354430152045962}
+  continueButton: {fileID: 1108573140}
   scoreHandler: {fileID: 607750941}
   gameOverText: {fileID: 1529574519}
   gameOverDisplay: {fileID: 1120544591}
@@ -1483,7 +1485,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1108573141}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 569685354}
+        m_TargetAssemblyTypeName: GameOverHandler, Assembly-CSharp
+        m_MethodName: ContinueButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1108573141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2232,3 +2246,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e91c1c79b0384c14c9eb61c5fac957cf, type: 3}
+--- !u!1 &4966354430152045962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4966354430455614673, guid: e91c1c79b0384c14c9eb61c5fac957cf, type: 3}
+  m_PrefabInstance: {fileID: 4966354430152045961}
+  m_PrefabAsset: {fileID: 0}

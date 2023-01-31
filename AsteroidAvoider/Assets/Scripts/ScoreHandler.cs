@@ -32,4 +32,7 @@ public class ScoreHandler : MonoBehaviour
             PlayerPrefs.SetInt(HighScoreKey, Mathf.FloorToInt(score));
         }    
     }
+    public void StartCounting(){
+        isCounting = true;
+    }
 }
